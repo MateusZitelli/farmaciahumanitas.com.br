@@ -141,7 +141,8 @@ INSTALLED_APPS = (
     'zinnia',
     'django.contrib.comments',
     'storages',
-    'collectfast'
+    'collectfast',
+    'south'
 )
 
 TEMPLATE_CONTEXT_PROCESSORS = (

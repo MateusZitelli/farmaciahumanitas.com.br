@@ -3,6 +3,7 @@ Django==1.5.5
 Fabric==1.8.1
 GitPython==0.1.7
 Pillow==2.2.2
+South==0.8.4
 argparse==1.2.1
 beautifulsoup4==4.3.2
 boto==2.21.0
