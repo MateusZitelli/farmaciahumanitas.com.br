@@ -22,7 +22,7 @@ if b == "master":
     project_folder = "farmaciahumanitas.com.br"
     base_dir = "/home/ubuntu/web/%s" % (project_folder,)
     app_location = base_dir + "/app"
-    env_activate = "source %svenv/bin/activate" % (base_dir,)
+    env_activate = "source %s/venv/bin/activate" % (base_dir,)
     uwsgi_service = 'humanitas_uwsgi'
     uwsgi_logs_folder = base_dir
     nginx_logs_folder = base_dir + "/logs"
