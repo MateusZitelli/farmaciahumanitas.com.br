@@ -23,6 +23,9 @@ if b == "master":
     base_dir = "/home/ubuntu/web/%s" % (project_folder,)
     app_location = base_dir + "/app"
     env_activate = "source %svenv/bin/activate" % (base_dir,)
+    uwsgi_service = 'humanitas_uwsgi'
+    uwsgi_logs_folder = base_dir
+    nginx_logs_folder = base_dir + "/logs"
 branch = '%s' % (b,)
 
 
@@ -53,9 +56,8 @@ def migrate():
         run('./manage.py migrate')
 
 def reset_server():
-    with prefix(env_activate):
-        with cd(bin_actions_folder):
-            run('./restart')
+    run('sudo service %s restart' % (uwsgi_service,))
+    run('sudo service nginx restart')
 
 def sync():
     local("git commit -a")
@@ -64,10 +66,13 @@ def sync():
         run('git pull origin %s'%(branch,))
     reset_server()
 
-def get_server_log():
-    with cd(user_logs_folder):
-        run('tail -n50 uwsgi.log')
-
+def get_server_erros_logs():
+    print "###### Nginx logs ######"
+    with cd(nginx_logs_folder):
+        run('tail -n50 error.log')
+    print "###### Uwsgi logs ######"
+    with cd(uwsgi_logs_folder):
+        run('sudo tail -n50 uwsgi.log')
 def full_deploy():
     pull()
     syncdb()
