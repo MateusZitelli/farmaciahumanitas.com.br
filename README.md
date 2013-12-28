@@ -1,2 +1,3 @@
-site_farmacia_humanitas
+Projeto do site da farmácia Humanitas
 =======================
+
