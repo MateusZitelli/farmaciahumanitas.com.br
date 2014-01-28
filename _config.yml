@@ -1,0 +1,11 @@
+name: "Farmácia Humanitas WebPage"
+description: "Teste do site da farácia humanitas"
+
+url: "http://localhost:4000"
+
+paginate: 2
+paginate_path: "_site/blog/page:num"
+
+markdown: rdiscount
+permalink: pretty
+
