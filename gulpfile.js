@@ -25,6 +25,7 @@ gulp.task('compass',function(){
 		.pipe(rename({ suffix: '.min' }))
 		.pipe(gulp.dest('dist/styles'))
 		.pipe(livereload());
+
 });
 
 gulp.task('scripts', function(){

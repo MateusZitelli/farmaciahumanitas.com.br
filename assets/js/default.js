@@ -39,7 +39,6 @@ var indexScript = function(){
     }
     $("#info-send").fadeIn();
     var json_madrill = {
-      "key": "0UCFVZPNNFfpkYrwC1ff7A",
       "template_name": "contato",
       "template_content": [
       {
@@ -136,7 +135,6 @@ var contactScript = function(){
       return;
     }
     var json_madrill = {
-        "key": "0UCFVZPNNFfpkYrwC1ff7A",
         "template_name": "contato",
         "template_content": [
             {
